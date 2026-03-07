@@ -1,0 +1,26 @@
+.send-button {
+  background-color: rgb(25, 135, 84);
+  color: white;
+  padding: 12px 20px;
+  /* space inside the element 1st value vertical space 
+                                                            2nd value horizontal space */
+  margin-left: 10px;
+  /* space outside the element */
+  border: none;
+  border-radius: 10px;
+  /* rounding of the edges */
+  font-size: 15px;
+  cursor: pointer;
+  /* hand pointer when we hover */
+}
+
+.app-container {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+  /* vh is viewport height i.e height of the browser 100vh means 100% of the height of the browser */
+  display: flex;
+  /* by default flex works horizontally so we must use flex-direction*/
+  flex-direction: column;
+}

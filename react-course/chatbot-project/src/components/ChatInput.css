@@ -1,0 +1,14 @@
+.chat-input {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-width: 1px;
+  /* adjust the thickness of the border */
+  font-size: 15px;
+  flex-grow: 1;
+}
+
+.chat-input-container {
+  display: flex;
+  /* to make use of Flexbox */
+  margin-bottom: 10px;
+}
