@@ -4,6 +4,12 @@ import './HomePage.css'
 
 
 export function HomePage() {
+    fetch('http://localhost:3000/api/products')  //fetch cant be saved in a const so it needs a Promise then
+        .then((response) => {
+            return response.json()
+        }).then((data) => { //response.json() cant be saved in a const so it needs a Promise then
+            console.log(data)
+        })
     return (
         <>
             <title>Ecommerce Project</title>
