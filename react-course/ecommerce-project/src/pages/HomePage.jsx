@@ -15,15 +15,12 @@ export function HomePage() {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:3000/api/products')  // axios is lot cleaner
+        axios.get('/api/products')  // axios is lot cleaner
             .then((response) => {
                 setProducts(response.data);
             });
-    }, []);
 
-
-    useEffect(() => {
-        axios.get('http://localhost:3000/api/cart-items')
+        axios.get('/api/cart-items')
             .then((response) => {
                 setCart(response.data);
             });
@@ -32,7 +29,7 @@ export function HomePage() {
     return (
         <>
             <title>Ecommerce Project</title>
-            <Header cart={cart}/>
+            <Header cart={cart} />
             <div className="home-page">
                 <div className="products-grid">
                     {products.map((product) => {
