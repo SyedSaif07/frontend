@@ -5,7 +5,7 @@ import { Header } from '../components/Header';
 import './HomePage.css'
 
 
-export function HomePage() {
+export function HomePage({cart}) {
     // fetch('http://localhost:3000/api/products')  //fetch cant be saved in a const so it needs a Promise then
     //     .then((response) => {
     //         return response.json()
@@ -13,16 +13,11 @@ export function HomePage() {
     //         console.log(data)
     //     })
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
+    
     useEffect(() => {
         axios.get('/api/products')  // axios is lot cleaner
             .then((response) => {
                 setProducts(response.data);
-            });
-
-        axios.get('/api/cart-items')
-            .then((response) => {
-                setCart(response.data);
             });
     }, []);
 
