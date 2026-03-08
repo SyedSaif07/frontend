@@ -1,6 +1,7 @@
 import axios from 'axios'
+import { useEffect, useState } from 'react';
 import { Header } from '../components/Header';
-import { products } from '../../starting-code/data/products'
+// import { products } from '../../starting-code/data/products'
 import './HomePage.css'
 
 
@@ -11,10 +12,14 @@ export function HomePage() {
     //     }).then((data) => { //response.json() cant be saved in a const so it needs a Promise then
     //         console.log(data)
     //     })
-    axios.get('http://localhost:3000/api/products')  // axios is lot cleaner
-        .then((response) => {
-            console.log(response.data);
-        });
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:3000/api/products')  // axios is lot cleaner
+            .then((response) => {
+               setProducts(response.data);
+            });
+    }, []);
+
     return (
         <>
             <title>Ecommerce Project</title>
