@@ -14,12 +14,18 @@ export function HomePage({ cart }) {
   //     })
   const [products, setProducts] = useState([]);
 
+  // using async we can store the response in a variable with await. then() is not required
+  // async response cannot be a Promise so we create a async function within the function of useEffect
   useEffect(() => {
-    axios
-      .get("/api/products") // axios is lot cleaner
-      .then((response) => {
-        setProducts(response.data);
-      });
+    const getHomeData = async() => {
+      const response = await axios.get("/api/products");
+      setProducts(response.data);
+    };
+     // axios is lot cleaner
+    // .then((response) => {
+    //   setProducts(response.data);
+    // });
+    getHomeData();
   }, []);
 
   return (
