@@ -65,7 +65,10 @@ export function CheckoutPage({ cart, getCartItems }) {
             getCartItems={getCartItems}
           />
 
-          <PaymentSummary paymentSummary={paymentSummary} />
+          <PaymentSummary
+            paymentSummary={paymentSummary}
+            getCartItems={getCartItems}
+          />
         </div>
       </div>
     </>
